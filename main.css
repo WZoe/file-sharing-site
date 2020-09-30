@@ -41,8 +41,27 @@ b {
 }
 
 .button, button {
-    background-color: black;
-    color: white;
+    border-color: black;
+    background-color: white;
     padding: 10px;
     border-radius: 20px;
 }
+
+.type {
+    background-color: lightgray;
+    margin: 0 15px;
+}
+
+.checked {
+    background-color: black;
+    color: white;
+}
+
+.center {
+    text-align: center;
+}
+
+#login {
+    float: left;
+}
+

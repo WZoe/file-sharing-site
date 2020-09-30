@@ -17,13 +17,14 @@
         exit();
     }
 
+
     $target_dir = "../../hidden_files/module2-group/" . $_SESSION["username"] . "/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
 
     // Check if file already exists
     if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
+        echo "Sorry, this file already exists, or you didn't select a file. ";
         $uploadOk = 0;
     }
 

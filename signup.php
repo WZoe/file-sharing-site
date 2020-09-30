@@ -2,24 +2,20 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="main.css">
-    <title>Log In</title>
+    <title>Sign Up</title>
 </head>
 <body>
 <div class="container">
     <h1>File Sharing Site</h1>
-    <h2>Log In</h2>
+    <h2>Sign Up</h2>
     <form method="GET">
         <p>
             Username: <input type="text" name="username"/>
         </p>
         <p>
-            <input class="button" id="login" type="submit" value="Log in"/>
+            <input class="button" type="submit" value="Sign up"/>
         </p>
     </form>
-    <p>
-        <button class="button" onclick="window.location.href='signup.php'">Create New User</button>
-    </p>
-
     <footer>
         Eimee Yang & Zoe Wang, 2020/09
     </footer>
@@ -28,7 +24,7 @@
 
     // read username from input
     if (!isset($_GET["username"]) || $_GET["username"] == "") {
-        echo "You need to login first. Username can't be null!";
+        echo "Username can't be null!";
         return;
     }
     $username = $_GET["username"];
@@ -36,25 +32,19 @@
     // Open users.txt
     $filename = "../../hidden_files/module2-group/users.txt";
 
-    $fp = @fopen($filename, 'r');
-    // Add each line to an array
+    $fp = @fopen($filename, 'a');
+    // Add a new line for the new user
     if ($fp) {
-        $users = explode("\n", fread($fp, filesize($filename)));
+        fwrite($fp, PHP_EOL . $username);
     }
     fclose($fp);
 
-    // if user is not in users.txt
-    if (!in_array($username, $users)) {
-        echo "Login failed. User not authorized!";
-        exit();
-    }
-
-    // user is authorized to login, create session for him/her
+    // user is created and authorized to login, create session for him/her
     $_SESSION["username"] = $username;
-    header("Location: index.php");
+    echo "Your have successfully signed up! We're now logging you in...";
+    header("refresh:3;url=index.php");
     exit();
     ?>
-
 </div>
 </body>
 </html>
