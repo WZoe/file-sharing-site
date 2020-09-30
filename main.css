@@ -11,7 +11,8 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 50px;
     background-color: white;
-    padding: 100px 200px;
+    margin: 50px 0;
+    padding: 100px;
 }
 
 footer {
@@ -22,13 +23,12 @@ footer {
     transform: translate(-50%, -50%);
     color: darkgray;
     font-size: 85%;
-
 }
 
 h1 {
     text-align: center;
     text-shadow: 3px 3px lightgray;
-    padding: 30px;
+    padding: 10px;
 }
 
 h2 {
