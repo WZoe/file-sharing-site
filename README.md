@@ -27,3 +27,6 @@ Grading:
 -3 W3C validator error (login.php)
 
 Final score: 46 / 55
+
+### Regrade comments:
+* +4pts, able to view and download files
